@@ -1,11 +1,17 @@
 package com.shevchik.webportal.domain;
 
-/**
- * Created with IntelliJ IDEA.
- * User: shevchik
- * Date: 06.10.12
- * Time: 14:58
- * To change this template use File | Settings | File Templates.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orders_items")
 public class OrderItem {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+
+    @Column(name = "quantity")
+    private int quantity;
+
 }

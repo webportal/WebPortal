@@ -11,12 +11,16 @@ import java.util.Set;
 public class Category {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "name")
     private String name;
 
-    @OneToMany
+    @ManyToMany
+    @JoinTable(name = "categories_items",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id"))
     private Set<Item> items = new HashSet<>();
 
 
