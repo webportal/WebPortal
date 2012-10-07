@@ -5,7 +5,12 @@
 
 <hibernate-configuration>
     <session-factory>
-
+        <mapping class="com.shevchik.webportal.domain.Item"/>
+        <mapping class="com.shevchik.webportal.domain.Category"/>
+        <mapping class="com.shevchik.webportal.domain.User"/>
+        <mapping class="com.shevchik.webportal.domain.Image"/>
+        <mapping class="com.shevchik.webportal.domain.Order"/>
+        <mapping class="com.shevchik.webportal.domain.OrderItem"/>
+        <mapping class="com.shevchik.webportal.domain.Purchase"/>
     </session-factory>
-
 </hibernate-configuration>

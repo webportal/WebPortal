@@ -17,7 +17,6 @@
         <common-pool.version>20030825.183949</common-pool.version>
         <slf4j.version>1.6.6</slf4j.version>
         <scalate.version>1.5.3</scalate.version>
-
     </properties>
 
 
@@ -62,6 +61,11 @@
             <version>${hibernate.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
         <!-- MySQL -->
 
         <dependency>
@@ -98,11 +102,7 @@
             <version>${scalate.version}</version>
         </dependency>
 
-        <!-- <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>-->
+
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
