@@ -30,7 +30,7 @@ public interface OrderService {
      * @param id
      * @return order
      */
-    Order getOrderById(int id);
+    Order findById(int id);
 
     /**
      * get all orders for given user

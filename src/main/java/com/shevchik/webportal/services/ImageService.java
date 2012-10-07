@@ -1,6 +1,9 @@
 package com.shevchik.webportal.services;
 
 import com.shevchik.webportal.domain.Image;
+import com.shevchik.webportal.domain.Item;
+
+import java.util.List;
 
 /**
  * User: dmytro
@@ -27,5 +30,12 @@ public interface ImageService {
      * @param id
      * @return image
      */
-    Image getById(int id);
+    Image findById(int id);
+
+    /**
+     * get all images for given item
+     * @param item
+     * @return list of images
+     */
+    List<Image> getImagesForItem(Item item);
 }

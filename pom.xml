@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>WebPortal</groupId>
-  <artifactId>WebPortal</artifactId>
-  <packaging>war</packaging>
-  <version>1.0</version>
-  <name>WebPortal Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>WebPortal</groupId>
+    <artifactId>WebPortal</artifactId>
+    <packaging>war</packaging>
+    <version>1.0</version>
+    <name>WebPortal Maven Webapp</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <java-version>1.7</java-version>
@@ -29,13 +29,13 @@
             <scope>test</scope>
         </dependency>
 
-    <!--Spring-->
+        <!--Spring-->
 
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>${org.springframework.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -48,46 +48,49 @@
             <artifactId>spring-faces</artifactId>
             <version>2.3.1.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.0.1.RELEASE</version>
+        </dependency>
 
         <!-- Hibernate -->
 
-      <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-entitymanager</artifactId>
-          <version>${hibernate.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
 
-      <!-- MySQL -->
+        <!-- MySQL -->
 
-      <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>${mysql.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
 
-      <!-- JSTL -->
+        <!-- JSTL -->
 
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>jstl</artifactId>
-          <version>1.2</version>
-          <scope>provided</scope>
-      </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
 
 
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${common-dbcp.version}</version>
+        </dependency>
 
-      <dependency>
-          <groupId>commons-dbcp</groupId>
-          <artifactId>commons-dbcp</artifactId>
-          <version>${common-dbcp.version}</version>
-      </dependency>
-
-      <dependency>
-          <groupId>commons-pool</groupId>
-          <artifactId>commons-pool</artifactId>
-          <version>${common-pool.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${common-pool.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.fusesource.scalate</groupId>
@@ -95,7 +98,7 @@
             <version>${scalate.version}</version>
         </dependency>
 
-       <!-- <dependency>
+        <!-- <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
@@ -104,6 +107,11 @@
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>10.0.1</version>
         </dependency>
 
     </dependencies>
@@ -117,109 +125,108 @@
         </repository>
     </repositories>
 
-  <build>
-      <plugins>
+    <build>
+        <plugins>
 
-          <!-- Clean target directory-->
+            <!-- Clean target directory-->
 
-          <plugin>
-              <artifactId>maven-clean-plugin</artifactId>
-              <version>2.5</version>
-              <configuration>
-                  <failOnError>false</failOnError>
-              </configuration>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
 
-              <executions>
-                  <execution>
-                      <id>auto-clean</id>
-                      <phase>initialize</phase>
-                      <goals>
-                          <goal>clean</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
-
-
-          <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>jboss-maven-plugin</artifactId>
-              <version>1.5.0</version>
-              <configuration>
-                  <jbossHome>C:\Program Files\jboss\jboss-as-7.1.1.Final</jbossHome>
-                  <serverName>all</serverName>
-                  <fileName>target/WebPortal.war</fileName>
-              </configuration>
-          </plugin>
-
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <version>2.5.1</version>
-              <configuration>
-                  <source>${java-version}</source>
-                  <target>${java-version}</target>
-              </configuration>
-          </plugin>
-
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-dependency-plugin</artifactId>
-              <executions>
-                  <execution>
-                      <id>install</id>
-                      <phase>install</phase>
-                      <goals>
-                          <goal>sources</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
 
-          <plugin>
-              <groupId>org.mortbay.jetty</groupId>
-              <artifactId>maven-jetty-plugin</artifactId>
-              <version>6.1.10</version>
-              <configuration>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jboss-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <jbossHome>C:\Program Files\jboss\jboss-as-7.1.1.Final</jbossHome>
+                    <serverName>all</serverName>
+                    <fileName>target/WebPortal.war</fileName>
+                </configuration>
+            </plugin>
 
-                  <scanIntervalSeconds>1</scanIntervalSeconds>
-                  <stopKey>foo</stopKey>
-                  <stopPort>9999</stopPort>
-                  <!--<scanTargetPatterns>
-                      <scanTargetPattern>
-                          <directory>
-                              ${basedir}/target
-                          </directory>
-                          <includes>
-                              <include>**/*.class</include>
-                              <include>**/*.jsp</include>
-                          </includes>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
 
-                      </scanTargetPattern>
-                  </scanTargetPatterns>-->
-              </configuration>
-              <executions>
-                  <execution>
-                      <id>start-jetty</id>
-                      <phase>pre-integration-test</phase>
-                      <goals>
-                          <goal>run</goal>
-                      </goals>
-                  </execution>
-                  <execution>
-                      <id>stop-jetty</id>
-                      <phase>post-integration-test</phase>
-                      <goals>
-                          <goal>stop</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
-      </plugins>
-    <finalName>WebPortal</finalName>
-  </build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <!--<scanTargetPatterns>
+                        <scanTargetPattern>
+                            <directory>
+                                ${basedir}/target
+                            </directory>
+                            <includes>
+                                <include>**/*.class</include>
+                                <include>**/*.jsp</include>
+                            </includes>
+
+                        </scanTargetPattern>
+                    </scanTargetPatterns>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <finalName>WebPortal</finalName>
+    </build>
 
 
 </project>

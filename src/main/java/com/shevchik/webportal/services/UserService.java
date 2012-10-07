@@ -29,14 +29,14 @@ public interface UserService {
      * @param id
      * @return user
      */
-    User getById(int id);
+    User findById(int id);
 
     /**
      * get user by id
      * @param name
      * @return user
      */
-    User getByName(String name);
+    User findByName(String name);
 
     /**
      * get all users

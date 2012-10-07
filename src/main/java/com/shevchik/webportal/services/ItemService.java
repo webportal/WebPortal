@@ -27,14 +27,14 @@ public interface ItemService {
      * get item by id
      * @return item
      */
-    Item getItemById(int id);
+    Item findById(int id);
 
     /**
      * get item by id
      * @param name
      * @return item
      */
-    Item getItemByName(String name);
+    Item findByName(String name);
 
     /**
      * get owner of this item
